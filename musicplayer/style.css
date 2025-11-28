@@ -1,0 +1,147 @@
+/* Global */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", Arial, sans-serif;
+    background-color: #121212;
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+/* Main Player Box */
+.player {
+    width: 350px;
+    margin-top: 40px;
+    background: #181818;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* Title */
+h1 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #1db954;
+}
+
+/* Now playing section */
+.now-playing {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+#song-title {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 8px 0;
+}
+
+#song-artist {
+    font-size: 14px;
+    color: #b3b3b3;
+}
+
+/* Controls */
+.controls {
+    margin: 15px 0;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.controls button {
+    background: #282828;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.2s;
+}
+
+#play-btn {
+    background: #1db954;
+    font-size: 22px;
+    padding: 14px 20px;
+}
+
+.controls button:hover {
+    transform: scale(1.1);
+}
+
+/* Progress Bar */
+.progress-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 15px;
+}
+
+#progress {
+    flex: 1;
+    cursor: pointer;
+    accent-color: #1db954;
+}
+
+#current-time, #duration {
+    font-size: 12px;
+    color: #a0a0a0;
+}
+
+/* Volume Slider */
+.volume {
+    margin-top: 20px;
+}
+
+.volume input {
+    width: 100%;
+    accent-color: #1db954;
+}
+
+/* Playlist Section */
+h3 {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #1db954;
+}
+
+#playlist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 220px;
+    overflow-y: auto;
+}
+
+/* Individual Songs */
+#playlist li {
+    padding: 12px 14px;
+    margin-bottom: 8px;
+    background: #282828;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#playlist li:hover {
+    background: #333333;
+}
+
+/* Active/Playing Song */
+#playlist li.active {
+    background: #1db954;
+    color: black;
+    font-weight: 600;
+}
+
+#playlist li.active:hover {
+    background: #1ed760;
+}
