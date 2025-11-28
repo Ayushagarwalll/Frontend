@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Eligibility Checker</title>
+</head>
+<body>
+
+<h2>Check Age Eligibility</h2>
+
+<script>
+    let age = prompt("Enter your age:");
+
+    if (!age) {
+        document.write("<p>No age entered.</p>");
+    } else {
+        age = Number(age);
+
+        let message = age >= 18 
+            ? "✔ You are eligible!"  
+            : "❌ You are NOT eligible.";
+
+        alert(message);
+        document.write("<h3>" + message + "</h3>");
+    }
+</script>
+
+</body>
+</html>

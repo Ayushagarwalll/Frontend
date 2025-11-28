@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Navigation Hover Effects</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+        }
+
+        .navbar {
+            background-color: #2c3e50;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .brand {
+            color: #ecf0f1;
+            font-weight: bold;
+            font-size: 18px;
+            margin-right: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 12px;
+        }
+
+        .nav-item {
+            color: #ecf0f1;
+            text-decoration: none;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 14px;
+            transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+        }
+
+        .nav-item:hover {
+            background-color: #ecf0f1;
+            color: #2c3e50;
+            transform: scale(1.05);
+        }
+
+        .page {
+            padding: 25px;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="brand">MySite</div>
+    <div class="nav-links">
+        <a href="#" class="nav-item">Home</a>
+        <a href="#" class="nav-item">Blog</a>
+        <a href="#" class="nav-item">Projects</a>
+        <a href="#" class="nav-item">Contact</a>
+    </div>
+</nav>
+
+<div class="page">
+    <h1>Hover Navigation Demo</h1>
+    <p>Move your mouse over the navigation items to see smooth background, color, and size transitions.</p>
+</div>
+
+</body>
+</html>

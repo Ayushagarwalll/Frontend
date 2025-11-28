@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f7fb;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .gallery-container {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        #mainImage {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+        }
+
+        .thumbs {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .thumbs img {
+            width: 80px;
+            height: 60px;
+            object-fit: cover;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: transform 0.2s ease;
+        }
+
+        .thumbs img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+<h2>Simple Image Gallery</h2>
+
+<div class="gallery-container">
+    <img id="mainImage" src="https://picsum.photos/id/100/600/400" alt="Main">
+
+    <div class="thumbs" id="thumbContainer">
+        <img src="https://picsum.photos/id/100/600/400" data-full="https://picsum.photos/id/100/600/400">
+        <img src="https://picsum.photos/id/101/600/400" data-full="https://picsum.photos/id/101/600/400">
+        <img src="https://picsum.photos/id/102/600/400" data-full="https://picsum.photos/id/102/600/400">
+        <img src="https://picsum.photos/id/103/600/400" data-full="https://picsum.photos/id/103/600/400">
+    </div>
+</div>
+
+<script>
+    const mainImg = document.getElementById("mainImage");
+    const thumbContainer = document.getElementById("thumbContainer");
+
+    thumbContainer.addEventListener("click", function(event) {
+        if(event.target.tagName === "IMG") {
+            mainImg.src = event.target.getAttribute("data-full");
+        }
+    });
+</script>
+
+</body>
+</html>

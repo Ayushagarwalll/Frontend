@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Interactive Tasks</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        /* FAQ Box */
+        .faq-box {
+            max-width: 600px;
+            background: white;
+            padding: 18px;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+        }
+
+        .question {
+            padding: 10px;
+            cursor: pointer;
+            background-color: #eef2ff;
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+
+        .answer {
+            display: none;
+            padding: 8px;
+            background: #ffffff;
+            border-left: 3px solid #4c8bf5;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        /* Dynamic CSS Section */
+        .style-box {
+            max-width: 600px;
+            background: white;
+            padding: 18px;
+            margin: 20px auto;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+        }
+
+        #styled-text {
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #dfe6ff;
+            border-radius: 6px;
+        }
+
+        button {
+            padding: 8px 14px;
+            border: none;
+            background-color: #4c8bf5;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 6px;
+        }
+
+        button:hover {
+            background-color: #3a6ec9;
+        }
+
+        /* LOGIN FORM */
+        .login-box {
+            max-width: 350px;
+            background: white;
+            padding: 18px;
+            margin: 20px auto;
+            border-radius: 10px;
+            text-align: center;
+            display: none; /* hidden initially */
+            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+        }
+
+        input {
+            width: 90%;
+            padding: 8px;
+            margin: 6px 0;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        #showFormBtn {
+            display: block;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Week 8 — jQuery Interaction Demo</h1>
+
+<!-- FAQ Section -->
+<div class="faq-box">
+    <h3>FAQ Section (slideToggle)</h3>
+
+    <div class="question">⭐ What is jQuery?</div>
+    <div class="answer">A JavaScript library that makes DOM manipulation easier.</div>
+
+    <div class="question">⭐ Why use it?</div>
+    <div class="answer">It simplifies animations, events, and AJAX handling.</div>
+
+    <div class="question">⭐ Is jQuery still used?</div>
+    <div class="answer">Yes — especially in older or simple frontend projects.</div>
+</div>
+
+
+<!-- Dynamic Styling Section -->
+<div class="style-box">
+    <h3>Dynamic Styling Using .css()</h3>
+
+    <p id="styled-text">Click the buttons below to change my style.</p>
+
+    <button id="redBtn">Make Red</button>
+    <button id="bigBtn">Make Bigger</button>
+    <button id="resetBtn">Reset</button>
+</div>
+
+
+<!-- Login Form Fade -->
+<button id="showFormBtn">Show Login Form</button>
+
+<div class="login-box" id="loginForm">
+    <h3>Login</h3>
+    <input type="text" placeholder="Username"><br>
+    <input type="password" placeholder="Password"><br>
+    <button id="closeBtn">Close</button>
+</div>
+
+
+<script>
+    // FAQ Toggle
+    $(".question").click(function() {
+        $(this).next(".answer").slideToggle();
+    });
+
+    // Dynamic CSS
+    $("#redBtn").click(() => {
+        $("#styled-text").css("color", "red");
+    });
+
+    $("#bigBtn").click(() => {
+        $("#styled-text").css("font-size", "22px");
+    });
+
+    $("#resetBtn").click(() => {
+        $("#styled-text").css({
+            "color": "black",
+            "font-size": "16px"
+        });
+    });
+
+    // Fade In/Out Login Form
+    $("#showFormBtn").click(() => {
+        $("#loginForm").fadeIn();
+    });
+
+    $("#closeBtn").click(() => {
+        $("#loginForm").fadeOut();
+    });
+</script>
+
+</body>
+</html>

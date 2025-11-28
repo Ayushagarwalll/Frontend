@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array Methods</title>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        pre {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+        }
+    </style>
+</head>
+<body>
+
+<h2>JavaScript Array Method Examples</h2>
+<pre id="output"></pre>
+
+<script>
+    const numbers = [10, 5, 20, 30, 7, 14];
+
+    const doubled = numbers.map(num => num * 2);
+
+    const filtered = numbers.filter(num => num > 10);
+
+    const total = numbers.reduce((sum, curr) => sum + curr, 0);
+
+    let textOutput = "Original Array: " + numbers.join(", ") + "\n";
+    textOutput += "Mapped (×2): " + doubled.join(", ") + "\n";
+    textOutput += "Filtered (>10): " + filtered.join(", ") + "\n";
+    textOutput += "Reduced (Sum): " + total + "\n\n";
+    textOutput += "Using forEach:\n";
+
+    numbers.forEach((num, i) => {
+        textOutput += `Index ${i} → ${num}\n`;
+    });
+
+    document.getElementById("output").innerText = textOutput;
+</script>
+
+</body>
+</html>

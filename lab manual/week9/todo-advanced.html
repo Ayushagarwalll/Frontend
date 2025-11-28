@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Advanced To-Do App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            padding: 20px;
+        }
+
+        h2 { text-align: center; }
+
+        .container {
+            max-width: 450px;
+            background: white;
+            padding: 15px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+        }
+
+        input {
+            width: 70%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        button {
+            padding: 7px 12px;
+            margin: 3px;
+            border: none;
+            background: #4c8bf5;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover { background: #3a6ec9; }
+
+        ul {
+            padding: 0;
+            margin-top: 10px;
+            list-style: none;
+        }
+
+        li {
+            background: #eef2ff;
+            margin-bottom: 6px;
+            padding: 10px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        li.done {
+            text-decoration: line-through;
+            opacity: 0.6;
+        }
+
+        .controls button {
+            padding: 4px 8px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Advanced To-Do List</h2>
+
+<div class="container">
+    <input type="text" id="taskInput" placeholder="Enter a task...">
+    <button onclick="addTask()">Add</button>
+
+    <ul id="taskList"></ul>
+</div>
+
+<script>
+function addTask() {
+    let input = document.getElementById("taskInput");
+    let text = input.value.trim();
+    if (!text) return;
+
+    let li = document.createElement("li");
+
+    let checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.onchange = () => li.classList.toggle("done");
+
+    let span = document.createElement("span");
+    span.textContent = text;
+
+    let btnUp = document.createElement("button");
+    btnUp.textContent = "↑";
+    btnUp.onclick = () => li.previousElementSibling?.before(li);
+
+    let btnDown = document.createElement("button");
+    btnDown.textContent = "↓";
+    btnDown.onclick = () => li.nextElementSibling?.after(li);
+
+    let btnDelete = document.createElement("button");
+    btnDelete.textContent = "Delete";
+    btnDelete.onclick = () => li.remove();
+
+    let controls = document.createElement("div");
+    controls.className = "controls";
+    controls.append(btnUp, btnDown, btnDelete);
+
+    li.append(checkbox, span, controls);
+    document.getElementById("taskList").append(li);
+
+    input.value = "";
+}
+</script>
+
+</body>
+</html>

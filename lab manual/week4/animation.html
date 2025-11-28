@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Space Animation</title>
+    <style>
+        body {
+            margin: 0;
+            background: radial-gradient(circle at top, #1b2735, #090a0f);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        .space-scene {
+            width: 80%;
+            max-width: 700px;
+            height: 350px;
+            border-radius: 20px;
+            background: linear-gradient(to bottom, #020111 0%, #191621 50%, #020111 100%);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+        }
+
+        .title {
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            font-size: 20px;
+            letter-spacing: 1px;
+        }
+
+        .astronaut {
+            width: 80px;
+            height: 80px;
+            background-image: url("images/astronaut.png");
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            bottom: 40px;
+            left: 40px;
+            animation: floatY 3s ease-in-out infinite alternate;
+        }
+
+        .rocket {
+            width: 70px;
+            height: 140px;
+            background-image: url("images/rocket.png");
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            bottom: -150px;
+            right: 60px;
+            animation: launch 5s linear infinite;
+        }
+
+        .planet {
+            width: 120px;
+            height: 120px;
+            background-image: url("images/planet.png");
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            top: 40px;
+            right: 150px;
+            animation: slowMove 10s linear infinite alternate;
+            opacity: 0.9;
+        }
+
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image:
+                radial-gradient(2px 2px at 20% 30%, rgba(255,255,255,0.8), transparent),
+                radial-gradient(2px 2px at 80% 60%, rgba(255,255,255,0.9), transparent),
+                radial-gradient(2px 2px at 50% 10%, rgba(255,255,255,0.7), transparent),
+                radial-gradient(2px 2px at 10% 80%, rgba(255,255,255,0.6), transparent);
+            opacity: 0.8;
+        }
+
+        @keyframes floatY {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes launch {
+            0% {
+                transform: translateY(0) translateX(0) rotate(-10deg);
+                opacity: 1;
+            }
+            60% {
+                transform: translateY(-320px) translateX(-40px) rotate(-5deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-380px) translateX(-60px) rotate(0deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes slowMove {
+            from {
+                transform: translateX(0) scale(1);
+            }
+            to {
+                transform: translateX(20px) scale(1.05);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="space-scene">
+    <div class="stars"></div>
+    <div class="title">Space Journey Animation</div>
+    <div class="astronaut"></div>
+    <div class="rocket"></div>
+    <div class="planet"></div>
+</div>
+
+</body>
+</html>

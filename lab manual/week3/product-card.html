@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Card</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .product-card {
+            width: 280px;
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            overflow: hidden;
+            margin: 10px;
+        }
+
+        .product-card img {
+            width: 100%;
+            display: block;
+        }
+
+        .product-body {
+            padding: 15px;
+        }
+
+        .product-title {
+            font-size: 18px;
+            margin: 0 0 8px;
+        }
+
+        .product-price {
+            color: #2d8f4e;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .product-desc {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 12px;
+        }
+
+        .buy-btn {
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: none;
+            background-color: #2d8f4e;
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .buy-btn:hover {
+            background-color: #256e3c;
+        }
+
+        @media (max-width: 480px) {
+            .product-card {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="product-card">
+    <img src="https://via.placeholder.com/280x180" alt="Product Image">
+    <div class="product-body">
+        <h2 class="product-title">Wireless Headphones</h2>
+        <div class="product-price">₹2,499</div>
+        <p class="product-desc">Lightweight wireless headphones with clear sound and long battery life. Perfect for daily use.</p>
+        <button class="buy-btn">Buy Now</button>
+    </div>
+</div>
+
+</body>
+</html>
