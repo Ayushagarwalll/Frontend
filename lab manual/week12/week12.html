@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Week 12 React Tasks</title>
+
+    <!-- React + Babel CDN -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            padding: 20px;
+        }
+
+        .card{
+            width: 220px;
+            padding: 15px;
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .cards{
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .form-box{
+            width: 280px;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        input, textarea{
+            width: 100%;
+            margin-bottom: 8px;
+            padding: 8px;
+        }
+
+        button{
+            padding: 8px 15px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Week 12 – React Project</h1>
+
+<div id="root"></div>
+
+<script type="text/babel">
+
+// ---------- Task 28 (Props + Reusable Card Component) ----------
+function Card(props){
+    return(
+        <div className="card">
+            <h3>{props.title}</h3>
+            <p>{props.details}</p>
+            <strong>₹{props.price}</strong>
+        </div>
+    )
+}
+
+// ---------- Task 29 (Controlled Form with useState) ----------
+function FormComponent(){
+
+    const [name, setName] = React.useState("");
+    const [email, setEmail] = React.useState("");
+    const [msg, setMsg] = React.useState("");
+    const [submitted, setSubmitted] = React.useState(false);
+
+    function handleSubmit(e){
+        e.preventDefault();
+        setSubmitted(true);
+    }
+
+    return(
+        <div className="form-box">
+            <h3>Contact Form</h3>
+
+            <form onSubmit={handleSubmit}>
+                <input placeholder="Name" value={name} onChange={(e)=>setName(e.target.value)} />
+                <input placeholder="Email" value={email} onChange={(e)=>setEmail(e.target.value)} />
+                <textarea placeholder="Message" value={msg} onChange={(e)=>setMsg(e.target.value)}></textarea>
+                <button>Submit</button>
+            </form>
+
+            {submitted && (
+                <div style={{marginTop:"10px"}}>
+                    <h4>Submitted Data:</h4>
+                    <p><strong>Name:</strong> {name}</p>
+                    <p><strong>Email:</strong> {email}</p>
+                    <p><strong>Message:</strong> {msg}</p>
+                </div>
+            )}
+        </div>
+    )
+}
+
+// ---------- Main App (Combines Both Tasks) ----------
+function App(){
+    return(
+        <div>
+            <h2>Task 28 - Reusable Cards</h2>
+
+            <div className="cards">
+                <Card title="Laptop" details="8GB RAM, SSD" price={55000}/>
+                <Card title="Keyboard" details="RGB Mechanical" price={3999}/>
+                <Card title="Headphones" details="Wireless Bluetooth" price={2499}/>
+            </div>
+
+            <hr/>
+
+            <h2>Task 29 - Controlled Form</h2>
+            <FormComponent/>
+        </div>
+    )
+}
+
+// Render
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App/>);
+
+</script>
+
+</body>
+</html>

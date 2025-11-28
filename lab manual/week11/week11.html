@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Week 11 React Tasks</title>
+
+    <!-- React & Babel CDN -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            padding: 20px;
+        }
+        .box{
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        pre{
+            background: #eee;
+            padding: 10px;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Week 11 — React Basics</h1>
+
+<div id="root"></div>
+
+<script type="text/babel">
+
+// ---------------- Task 26: First React Component ----------------
+function HelloWorld(){
+    return (
+        <div className="box">
+            <h2>Hello World</h2>
+            <p>This is my first React component.</p>
+        </div>
+    );
+}
+
+// ---------------- Task 27: JSX Expressions ----------------
+function JSXDemo(){
+
+    const name = "Ayush";
+    const age = 19;
+    const currentYear = new Date().getFullYear();
+
+    function greet(){
+        return "Learning React step by step 👍";
+    }
+
+    return(
+        <div className="box">
+            <h2>JSX Dynamic Content</h2>
+            <p><strong>Name:</strong> {name}</p>
+            <p><strong>Age:</strong> {age}</p>
+            <p><strong>Year:</strong> {currentYear}</p>
+            <p><strong>Function Output:</strong> {greet()}</p>
+        </div>
+    )
+}
+
+// ---------------- Task 25: Setup Instructions ----------------
+function SetupInstructions(){
+    return(
+        <div className="box">
+            <h2>Task 25 — React Setup Process</h2>
+            <p>This is how the React project was created:</p>
+
+            <pre>
+npm create vite@latest my-react-app -- --template react
+cd my-react-app
+npm install
+npm run dev
+            </pre>
+        </div>
+    )
+}
+
+// ---------------- Main App Combining All Tasks ----------------
+function App(){
+    return(
+        <div>
+            <SetupInstructions/>
+            <HelloWorld/>
+            <JSXDemo/>
+        </div>
+    )
+}
+
+// Render
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App/>);
+
+</script>
+
+</body>
+</html>
