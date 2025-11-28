@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Timetable</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef3f8;
+            margin: 0;
+        }
+        h1 {
+            text-align: center;
+            padding: 15px;
+            background: #74b9ff;
+            color: white;
+        }
+        table {
+            border-collapse: collapse;
+            width: 90%;
+            margin: 20px auto;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        th, td {
+            border: 1px solid #dcdcdc;
+            padding: 12px;
+            text-align: center;
+        }
+        thead {
+            background-color: #a8d1ff;
+        }
+        tbody tr:nth-child(even) {
+            background-color: #f6faff;
+        }
+        tbody tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+        tfoot {
+            background-color: #d7f7d3;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Weekly Timetable</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Day</th>
+            <th>8-9 AM</th>
+            <th>9-10 AM</th>
+            <th>10-11 AM</th>
+            <th>11-12 PM</th>
+            <th>12-1 PM</th>
+            <th>1-2 PM</th>
+            <th>2-4 PM</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>Monday</td>
+            <td>Math</td>
+            <td>DBMS</td>
+            <td>English</td>
+            <td>CO</td>
+            <td>Lunch</td>
+            <td>OOPS</td>
+            <td>DBMS Lab</td>
+        </tr>
+
+        <tr>
+            <td>Tuesday</td>
+            <td>Frontend</td>
+            <td>Math</td>
+            <td>OOPS</td>
+            <td>English</td>
+            <td>Lunch</td>
+            <td>CO</td>
+            <td>Frontend Lab</td>
+        </tr>
+
+        <tr>
+            <td>Wednesday</td>
+            <td>English</td>
+            <td>OOPS</td>
+            <td>Math</td>
+            <td>Break</td>
+            <td>Lunch</td>
+            <td>Frontend</td>
+            <td>OOPS Lab</td>
+        </tr>
+
+        <tr>
+            <td>Thursday</td>
+            <td>CO</td>
+            <td>DBMS</td>
+            <td>Math</td>
+            <td>English</td>
+            <td>Lunch</td>
+            <td>Frontend</td>
+            <td>DBMS Lab</td>
+        </tr>
+
+        <tr>
+            <td>Friday</td>
+            <td>OOPS</td>
+            <td>Math</td>
+            <td>DBMS</td>
+            <td>CO</td>
+            <td>Lunch</td>
+            <td>Break</td>
+            <td>Frontend Lab</td>
+        </tr>
+    </tbody>
+
+    <tfoot>
+        <tr>
+            <td colspan="8">Weekend Off</td>
+        </tr>
+    </tfoot>
+</table>
+
+</body>
+</html>
